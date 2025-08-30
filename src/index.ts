@@ -3,13 +3,17 @@ import MainScene from './scenes/MainScene';
 
 const config: Phaser.Types.Core.GameConfig = {
   type: Phaser.AUTO,
-  width: 800,
-  height: 600,
-  physics: {
-    default: 'arcade',
-    arcade: { gravity: { x: 0, y: 500 } }
+  scene: [MainScene],
+  parent: 'game-container',
+  scale: {
+    mode: Phaser.Scale.RESIZE,
+    width: "100%",
+    height: "100%",
   },
-  scene: [MainScene]
+  physics: {
+    default: 'arcade'
+  },
+  autoRound: false
 };
 
 new Phaser.Game(config);
